@@ -51,7 +51,12 @@ bash ./setup.sh
 ```
 
 4. Navega hasta el puerto web: 
-[localhost:5173](http://localhost:5173/orders)
+
+Primero, agrega unos productos usando la UI en: 
+[localhost:5173/products](http://localhost:5173/products)
+
+Después puedes crear órdenes en:
+[localhost:5173/orders](http://localhost:5173/orders)
 
 5. Para terminar la ejecución, usa:
 ```bash
