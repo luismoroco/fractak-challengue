@@ -45,11 +45,15 @@ Sigue los pasos a continuación para ejecutar la aplicación:
 ```bash
 sudo make up
 ```
+3. Ejecuta la App Node: 
+```bash
+bash ./setup.sh
+```
 
-3. Navega hasta el puerto web: 
-[localhost:5173](http://localhost:5173/)
+4. Navega hasta el puerto web: 
+[localhost:5173](http://localhost:5173/orders)
 
-4. Para terminar la ejecución, usa:
+5. Para terminar la ejecución, usa:
 ```bash
 sudo make down
 ```
