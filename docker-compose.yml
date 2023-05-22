@@ -1,0 +1,38 @@
+version: '3'
+services:
+  web:
+    build:
+      context: ./fronted-fractal/
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    network_mode: host
+    ports:
+      - 5173:5173
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: ./fractal-intern/
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    network_mode: host
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    env_file:
+      - .env
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data:/data/db
+    restart: always
+
+volumes:
+  mongodb_data:
