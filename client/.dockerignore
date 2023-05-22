@@ -1,0 +1,4 @@
+*.cjs
+/build
+/node_modules
+/dist
