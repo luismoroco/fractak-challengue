@@ -1,13 +1,17 @@
-FROM openjdk:17-jdk-slim
+FROM adoptopenjdk:14-jdk-hotspot as builder
 
 WORKDIR /app
-
-COPY build.gradle .
-
-RUN java -jar /opt/gradle/gradle-7.0.2/lib/gradle-launcher.jar wrapper --gradle-version 7.0.2
 
 COPY . .
 
 RUN ./gradlew build
 
-CMD ["./gradlew", "bootRun"]
+FROM adoptopenjdk:14-jre-hotspot
+
+WORKDIR /app
+
+COPY --from=builder app/build/libs/challenge-0.0.1-SNAPSHOT.jar app.jar
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "app.jar"]
