@@ -4,6 +4,8 @@ Este proyecto es una aplicación web basada en Spring Boot y React.
 
 ## Estructura del proyecto
 
+<img src="docs/img/structure.png" alt="Texto alternativo" width="700px">
+
 El proyecto se divide en dos carpetas principales:
 
 - `server`: Contiene el código fuente del servidor backend desarrollado en Java utilizando Spring Boot.
